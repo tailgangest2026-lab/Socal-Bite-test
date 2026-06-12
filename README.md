@@ -1,1 +1,2 @@
-# Socal-Bite-test
+# socal-bite
+Southern California Fishing reports

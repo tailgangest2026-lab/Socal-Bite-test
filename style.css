@@ -1,0 +1,11 @@
+/* Compatibility bundle. New pages load css/main.css + page CSS directly. */
+@import url("css/main.css");
+@import url("css/forecast.css");
+@import url("css/conditions.css");
+@import url("css/rankings.css");
+@import url("css/species.css");
+@import url("css/landings.css");
+@import url("css/reports.css");
+@import url("css/news.css");
+@import url("css/details.css");
+@import url("css/gear.css");
