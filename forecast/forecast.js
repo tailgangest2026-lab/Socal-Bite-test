@@ -7,7 +7,7 @@ let speciesFpaChartInstance = null;
 
 async function initForecast() {
   try {
-    forecastRows = await fetchJson("home.json");
+    forecastRows = await fetchJson("../home.json");
     dailyRows = await loadRecentDailyRows();
 
     if (!Array.isArray(forecastRows) || !forecastRows.length) {
