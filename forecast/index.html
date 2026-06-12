@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bite Forecast | The SoCal Bite</title>
+  <meta name="description" content="Southern California bite forecast by region using NOAA marine conditions, tide, moon phase, swell, wind, and recent catch history." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesocalbite.com/forecast/" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/forecast.css" />
+
+
+  
+</head>
+
+<body>
+  <div id="site-header"></div>
+<main>
+    <section class="forecast-hero">
+      <span class="page-kicker">Bite Forecast</span>
+      <h1>Read the water before you leave the harbor.</h1>
+      <p>
+        NOAA marine conditions, wind, tide, moon phase, water temperature and recent catch history —
+        combined into one regional bite score.
+      </p>
+
+      <div id="regionTabs" class="forecast-tabs"></div>
+    </section>
+
+    <section class="forecast-dashboard">
+      <article class="bite-score-card">
+  <span id="selectedRegionLabel">Region</span>
+  <h2>Bite Score</h2>
+
+  <div class="bite-score-simple">
+    <strong id="biteScoreValue">0</strong>
+    <small id="biteScoreLabel">Loading...</small>
+  </div>
+</article>
+
+      <div class="condition-grid">
+        <article class="condition-card">
+          <span>🌡 Water</span>
+          <strong id="waterTemp">--</strong>
+        </article>
+
+        <article class="condition-card">
+          <span>💨 Wind</span>
+          <strong id="wind">--</strong>
+        </article>
+
+        <article class="condition-card">
+          <span>🌊 Swell</span>
+          <strong id="swell">--</strong>
+        </article>
+
+        <article class="condition-card">
+          <span>☀ Visibility</span>
+          <strong id="visibility">--</strong>
+        </article>
+
+        <article class="condition-card">
+          <span>↕ Tide</span>
+          <strong id="tide">--</strong>
+        </article>
+
+        <article class="condition-card">
+          <span>Sunrise</span>
+          <strong id="sunrise">--</strong>
+        </article>
+
+        <article class="condition-card">
+          <span>Sunset</span>
+          <strong id="sunset">--</strong>
+        </article>
+
+        <article class="condition-card">
+          <span>Moon</span>
+          <strong id="moon">--</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="trend-panel">
+      <div class="trend-header">
+        <div>
+          <span>12-Week Trend</span>
+          <h2>Regional fish-per-angler trend</h2>
+        </div>
+        <b id="trendRegion">Region</b>
+      </div>
+
+<div class="species-fpa-chart">
+  <canvas id="speciesFpaChart"></canvas>
+</div>
+    </section>
+
+    <section id="speciesRankings" class="forecast-species-grid"></section>
+  </main>
+  <div id="site-footer"></div>
+<script src="/site-config.js"></script>
+  <script src="/noaa-conditions.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="forecast.js"></script>
+  <script src="/js/layout.js"></script>
+</body>
+</html>
