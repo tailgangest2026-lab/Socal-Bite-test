@@ -1,0 +1,62 @@
+[
+  {
+    "trip_date": "2025-11-15",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 26,
+    "fish_counts": "50 Red Rockfish, 27 Rockfish, 1 Sheephead",
+    "total_fish": 78
+  },
+  {
+    "trip_date": "2025-11-15",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Tradition",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 5,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-11-15",
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "boat": "Patriot (Avila Beach)",
+    "trip_type": "1/2 Day AM",
+    "anglers": 21,
+    "fish_counts": "2 Lingcod",
+    "total_fish": 2
+  },
+  {
+    "trip_date": "2025-11-15",
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "boat": "Avenger",
+    "trip_type": "1/2 Day AM",
+    "anglers": 7,
+    "fish_counts": "1 Red Rockfish, 66 Rockfish",
+    "total_fish": 67
+  },
+  {
+    "trip_date": "2025-11-15",
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "boat": "Endeavor (MB)",
+    "trip_type": "Full Day",
+    "anglers": 27,
+    "fish_counts": "15 Red Rockfish, 240 Rockfish",
+    "total_fish": 255
+  },
+  {
+    "trip_date": "2025-11-15",
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "boat": "Starfire",
+    "trip_type": "3/4 Day",
+    "anglers": 21,
+    "fish_counts": "8 Lingcod, 10 Red Rockfish, 200 Rockfish",
+    "total_fish": 218
+  }
+]
