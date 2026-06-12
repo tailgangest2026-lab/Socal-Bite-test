@@ -1,0 +1,42 @@
+[
+  {
+    "trip_date": "2025-04-01",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 52,
+    "fish_counts": "1 Sand Bass, 260 Sculpin",
+    "total_fish": 261
+  },
+  {
+    "trip_date": "2025-04-01",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day AM",
+    "anglers": 16,
+    "fish_counts": "5 Calico Bass Released, 1 Sculpin, 1 Sheephead",
+    "total_fish": 7
+  },
+  {
+    "trip_date": "2025-04-01",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 26,
+    "fish_counts": "100 Sculpin, 1 Sheephead, 21 Whitefish",
+    "total_fish": 122
+  },
+  {
+    "trip_date": "2025-04-01",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 41,
+    "fish_counts": "50 Red Rockfish, 101 Rockfish, 1 Sand Bass, 7 Sculpin",
+    "total_fish": 159
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "trip_date": "2025-03-06",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Triton",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-03-06",
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Victory",
+    "trip_type": "3/4 Day",
+    "anglers": 49,
+    "fish_counts": "196 Sculpin, 7 Sheephead, 10 Whitefish",
+    "total_fish": 213
+  },
+  {
+    "trip_date": "2025-03-06",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 18,
+    "fish_counts": "90 Sculpin",
+    "total_fish": 90
+  },
+  {
+    "trip_date": "2025-03-06",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 17,
+    "fish_counts": "15 Calico Bass, 2 Sand Bass",
+    "total_fish": 17
+  },
+  {
+    "trip_date": "2025-03-06",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "Full Day",
+    "anglers": 42,
+    "fish_counts": "196 Sculpin, 24 Sheephead, 37 Whitefish",
+    "total_fish": 257
+  },
+  {
+    "trip_date": "2025-03-06",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 35,
+    "fish_counts": "19 Halibut",
+    "total_fish": 19
+  }
+]

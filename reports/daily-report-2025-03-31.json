@@ -1,0 +1,52 @@
+[
+  {
+    "trip_date": "2025-03-31",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 52,
+    "fish_counts": "1 Sand Bass, 260 Sculpin",
+    "total_fish": 261
+  },
+  {
+    "trip_date": "2025-03-31",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day AM",
+    "anglers": 16,
+    "fish_counts": "5 Calico Bass Released, 1 Sculpin, 1 Sheephead",
+    "total_fish": 7
+  },
+  {
+    "trip_date": "2025-03-31",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 26,
+    "fish_counts": "100 Sculpin, 1 Sheephead, 21 Whitefish",
+    "total_fish": 122
+  },
+  {
+    "trip_date": "2025-03-31",
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Point Loma",
+    "trip_type": "1/2 Day AM",
+    "anglers": 13,
+    "fish_counts": "1 Sculpin, 99 Whitefish",
+    "total_fish": 100
+  },
+  {
+    "trip_date": "2025-03-31",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 16,
+    "fish_counts": "1 Calico Bass, 35 Whitefish",
+    "total_fish": 36
+  }
+]

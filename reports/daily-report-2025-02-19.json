@@ -1,0 +1,72 @@
+[
+  {
+    "trip_date": "2025-02-19",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 27,
+    "fish_counts": "1 Halibut, 3 Sand Bass, 16 Sculpin",
+    "total_fish": 20
+  },
+  {
+    "trip_date": "2025-02-19",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 9,
+    "fish_counts": "3 Sand Bass, 45 Sculpin",
+    "total_fish": 48
+  },
+  {
+    "trip_date": "2025-02-19",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "2 Calico Bass, 23 Sand Bass, 100 Sculpin",
+    "total_fish": 125
+  },
+  {
+    "trip_date": "2025-02-19",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Sum Fun",
+    "trip_type": "1/2 Day AM",
+    "anglers": 19,
+    "fish_counts": "70 Sculpin",
+    "total_fish": 70
+  },
+  {
+    "trip_date": "2025-02-19",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "1/2 Day AM",
+    "anglers": 7,
+    "fish_counts": "31 Sculpin, 8 Whitefish",
+    "total_fish": 39
+  },
+  {
+    "trip_date": "2025-02-19",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "3/4 Day",
+    "anglers": 26,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-02-19",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 10,
+    "fish_counts": "10 Calico Bass Released, 2 Sand Bass, 5 Sculpin",
+    "total_fish": 17
+  }
+]

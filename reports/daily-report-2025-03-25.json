@@ -1,0 +1,102 @@
+[
+  {
+    "trip_date": "2025-03-25",
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Victory",
+    "trip_type": "3/4 Day",
+    "anglers": 34,
+    "fish_counts": "55 Sculpin, 15 Sheephead, 90 Whitefish",
+    "total_fish": 160
+  },
+  {
+    "trip_date": "2025-03-25",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 27,
+    "fish_counts": "110 Sculpin, 1 Sheephead",
+    "total_fish": 111
+  },
+  {
+    "trip_date": "2025-03-25",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Reel Fun",
+    "trip_type": "1/2 Day AM",
+    "anglers": 25,
+    "fish_counts": "7 Calico Bass, 35 Calico Bass Released, 3 Sculpin, 1 Whitefish",
+    "total_fish": 46
+  },
+  {
+    "trip_date": "2025-03-25",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 52,
+    "fish_counts": "100 Sculpin, 10 Sheephead, 20 Whitefish",
+    "total_fish": 130
+  },
+  {
+    "trip_date": "2025-03-25",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 35,
+    "fish_counts": "165 Sculpin, 7 Sheephead",
+    "total_fish": 172
+  },
+  {
+    "trip_date": "2025-03-25",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 14,
+    "fish_counts": "1 Calico Bass, 16 Sand Bass, 52 Sculpin",
+    "total_fish": 69
+  },
+  {
+    "trip_date": "2025-03-25",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 8,
+    "fish_counts": "1 Sculpin, 12 Whitefish",
+    "total_fish": 13
+  },
+  {
+    "trip_date": "2025-03-25",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 26,
+    "fish_counts": "4 Sculpin, 1 Sheephead, 67 Whitefish",
+    "total_fish": 72
+  },
+  {
+    "trip_date": "2025-03-25",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Aloha Spirit Old",
+    "trip_type": "Full Day",
+    "anglers": 7,
+    "fish_counts": "1 Sculpin, 2 Sheephead, 40 Whitefish",
+    "total_fish": 43
+  },
+  {
+    "trip_date": "2025-03-25",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Island Fox",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "1 Sculpin, 2 Sheephead, 31 Whitefish",
+    "total_fish": 34
+  }
+]

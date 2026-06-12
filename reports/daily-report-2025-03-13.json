@@ -1,0 +1,12 @@
+[
+  {
+    "trip_date": "2025-03-13",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "3/4 Day",
+    "anglers": 26,
+    "fish_counts": "26 Bonito",
+    "total_fish": 26
+  }
+]

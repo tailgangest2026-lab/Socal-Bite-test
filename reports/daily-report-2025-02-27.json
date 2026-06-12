@@ -1,0 +1,62 @@
+[
+  {
+    "trip_date": "2025-02-27",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Gail Force",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 7,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-02-27",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 28,
+    "fish_counts": "6 Calico Bass, 22 Sand Bass, 140 Sculpin",
+    "total_fish": 168
+  },
+  {
+    "trip_date": "2025-02-27",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Reel Fun",
+    "trip_type": "1/2 Day AM",
+    "anglers": 19,
+    "fish_counts": "17 Calico Bass, 90 Calico Bass Released",
+    "total_fish": 107
+  },
+  {
+    "trip_date": "2025-02-27",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 17,
+    "fish_counts": "1 Calico Bass, 16 Sand Bass, 75 Sculpin",
+    "total_fish": 92
+  },
+  {
+    "trip_date": "2025-02-27",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-02-27",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 10,
+    "fish_counts": "1 Calico Bass, 4 Sand Bass, 50 Sculpin",
+    "total_fish": 55
+  }
+]

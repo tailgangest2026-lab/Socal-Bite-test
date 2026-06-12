@@ -1,0 +1,32 @@
+[
+  {
+    "trip_date": "2025-04-02",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 45,
+    "fish_counts": "7 Halibut",
+    "total_fish": 7
+  },
+  {
+    "trip_date": "2025-04-02",
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "boat": "Avenger",
+    "trip_type": "1/2 Day AM",
+    "anglers": 15,
+    "fish_counts": "15 Lingcod, 2 Red Rockfish, 50 Rockfish",
+    "total_fish": 67
+  },
+  {
+    "trip_date": "2025-04-02",
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "boat": "Island Spirit",
+    "trip_type": "1/2 Day AM",
+    "anglers": 29,
+    "fish_counts": "1 Lingcod, 239 Rockfish, 2 Sculpin, 67 Whitefish",
+    "total_fish": 309
+  }
+]
