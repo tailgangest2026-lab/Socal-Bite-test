@@ -26,7 +26,7 @@ async function initForecast() {
 async function fetchJson(path) {
   const url = window.socalBiteDataUrl
     ? window.socalBiteDataUrl(path)
-    : path;
+    : "../" + path;
 
   const response = await fetch(url);
 
