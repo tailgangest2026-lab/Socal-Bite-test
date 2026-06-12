@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Landing Profile | The SoCal Bite</title>
+  <meta name="description" content="Southern California sportfishing landing profile with fleet rankings, fish counts, trip prices and recent reports." />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/details.css" />
+</head>
+
+<body>
+  <div id="site-header"></div>
+<main>
+    <section class="landing-detail-hero">
+      <a class="back-link" href="/landings/">← All Landings</a>
+
+      <span class="page-kicker">Landing Profile</span>
+
+      <h1 id="landingTitle">Loading landing...</h1>
+      <p id="landingRegion">Region loading...</p>
+
+      <div class="landing-detail-kpis">
+        <article>
+          <span>Trips</span>
+          <strong id="landingTrips">--</strong>
+        </article>
+        <article>
+          <span>Anglers</span>
+          <strong id="landingAnglers">--</strong>
+        </article>
+        <article>
+          <span>Fish Landed</span>
+          <strong id="landingFish">--</strong>
+        </article>
+        <article>
+          <span>FPA</span>
+          <strong id="landingFpa">--</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="landing-info-strip">
+      <div>
+        <span class="page-kicker">Trip Types / Prices</span>
+        <div id="landingPriceList" class="landing-detail-price-list">
+          <div class="loading-card">Loading prices...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-detail-section">
+      <h2>🏆 Fleet · ranked by FPA</h2>
+      <div id="landingFleet" class="landing-fleet-grid">
+        <div class="loading-card">Loading fleet...</div>
+      </div>
+    </section>
+
+    <section class="landing-detail-section">
+      <h2>Most recent reports</h2>
+      <div id="landingRecentReports" class="landing-reports-grid">
+        <div class="loading-card">Loading reports...</div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+<script src="/site-config.js"></script>
+  <script src="landing-detail.js?v=loveable-landing-detail-1"></script>
+  <script src="/js/layout.js"></script>
+</body>
+</html>
