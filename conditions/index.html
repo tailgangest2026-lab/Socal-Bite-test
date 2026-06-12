@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fishing Conditions | The SoCal Bite</title>
+  <meta name="description" content="Southern California boat, pier, and surf fishing conditions using NOAA weather, tide, wind, water temperature, swell, moon phase, and future condition estimates." />
+
+  <link rel="canonical" href="https://thesocalbite.com/conditions/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fishing Conditions | The SoCal Bite" />
+  <meta property="og:description" content="Check Southern California boat, pier, and surf fishing conditions by region and future date." />
+  <meta property="og:url" content="https://thesocalbite.com/conditions/" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+
+  <link rel="icon" href="/assets/socal-bite-logo.webp" type="image/webp" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/conditions.css" />
+</head>
+
+<body>
+  <div id="site-header"></div>
+<main>
+    <section class="conditions-hero">
+      <span class="page-kicker">Conditions</span>
+      <h1>Wind, water, tide — all on one screen.</h1>
+      <p>Bait, tide windows, surf, pier-side and offshore bite conditions for Southern California anglers.</p>
+
+      <div class="mode-tabs">
+        <button class="active" type="button" data-mode="pier">◎ Pier</button>
+        <button type="button" data-mode="beach">≋ Surf</button>
+        <button type="button" data-mode="boat">⚓ Boat</button>
+      </div>
+
+      <div class="region-filter-row">
+  <div id="regionTabs" class="forecast-tabs"></div>
+
+  <div class="date-filter-inline">
+    <select id="dateSelect" class="conditions-date-select"></select>
+  </div>
+</div>
+
+      <p class="conditions-note">
+        Water temperature is live from NOAA for today. Future water temperatures are estimated from the latest NOAA reading, forecast air temperature, and seasonal trend.
+      </p>
+    </section>
+
+    <section class="conditions-dashboard">
+      <article class="now-card split-temp-card">
+  <span id="conditionLocationLabel">Region · Mode</span>
+  <h2 id="conditionTitle">Selected Conditions</h2>
+
+  <div class="temp-split-row">
+    <div class="temp-box">
+      <small>Water</small>
+      <strong id="conditionWaterTemp">--°</strong>
+      <span id="conditionWaterLabel">NOAA latest</span>
+    </div>
+
+    <div class="temp-box">
+      <small>Air</small>
+      <strong id="conditionAirOnlyTemp">--°</strong>
+      <span id="conditionAirLabel">Forecast</span>
+    </div>
+  </div>
+
+  <div id="conditionRating" class="green-pill">Loading</div>
+</article>
+
+      <div class="condition-grid">
+        <article class="condition-card">
+          <span>💨 Wind</span>
+          <strong id="conditionWind">--</strong>
+          <p id="conditionWindDir">--</p>
+        </article>
+
+        <article class="condition-card">
+          <span>🌤 Forecast</span>
+          <strong id="conditionForecast">--</strong>
+          <p id="conditionCloudRain">Cloud / rain</p>
+        </article>
+
+        <article class="condition-card">
+          <span>🌊 Swell</span>
+          <strong id="conditionSwell">--</strong>
+          <p id="conditionSwellPeriod">Estimated</p>
+        </article>
+
+        <article class="condition-card">
+          <span>↕ Tide</span>
+          <strong id="conditionTide">--</strong>
+          <p id="conditionNextTide">Next tide window</p>
+        </article>
+
+        <article class="condition-card">
+          <span>☀ Visibility</span>
+          <strong id="conditionVisibility">--</strong>
+          <p>Estimated</p>
+        </article>
+
+        <article class="condition-card">
+          <span>≋ Clarity</span>
+          <strong id="conditionClarity">--</strong>
+          <p id="conditionClarityNote">Water color</p>
+        </article>
+
+        <article class="condition-card">
+          <span>☾ Moon</span>
+          <strong id="conditionMoon">--</strong>
+          <p>Selected date phase</p>
+        </article>
+
+        <article class="condition-card">
+          <span>Sunrise</span>
+          <strong id="conditionSunrise">--</strong>
+          <p>Local</p>
+        </article>
+
+        <article class="condition-card">
+          <span>Sunset</span>
+          <strong id="conditionSunset">--</strong>
+          <p>Local</p>
+        </article>
+
+        <article class="condition-card">
+          <span>Small Craft</span>
+          <strong id="conditionAdvisory">--</strong>
+          <p>Advisory</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="all-regions-panel">
+      <h2 id="allRegionsTitle">All regions · Pier</h2>
+      <div id="allRegionsGrid" class="all-regions-grid"></div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+<script src="/site-config.js"></script>
+  <script src="/noaa-conditions.js?v=loveable-conditions-12"></script>
+  <script src="conditions.js?v=loveable-conditions-12"></script>
+  <script src="/js/layout.js"></script>
+</body>
+</html>
