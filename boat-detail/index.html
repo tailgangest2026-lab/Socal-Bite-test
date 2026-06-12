@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Boat Profile | The SoCal Bite</title>
+  <meta name="description" content="Southern California sportfishing boat profile with trips, anglers, fish counts, fish-per-angler, top species, trends and recent reports." />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/details.css" />
+</head>
+
+<body>
+  <div id="site-header"></div>
+<main>
+    <section class="boat-detail-hero">
+      <a class="back-link" href="/rankings/">← All Boats</a>
+
+      <span class="page-kicker">Boat Profile</span>
+
+      <h1 id="boatName">Loading boat...</h1>
+      <p id="boatLanding">Loading landing...</p>
+
+      <div class="boat-detail-kpis">
+        <article><span>30-Day Score</span><strong id="boatScore">--</strong></article>
+        <article><span>Trips</span><strong id="boatTrips">--</strong></article>
+        <article><span>Anglers</span><strong id="boatAnglers">--</strong></article>
+        <article><span>Fish Landed</span><strong id="boatFish">--</strong></article>
+        <article><span>FPA</span><strong id="boatFpa">--</strong></article>
+      </div>
+    </section>
+
+    <section class="boat-detail-grid">
+      <article class="boat-detail-card">
+        <h2>Boat Intelligence</h2>
+        <div id="boatIntel" class="boat-intel-list">
+          <div class="loading-card">Loading boat intelligence...</div>
+        </div>
+      </article>
+
+      <article class="boat-detail-card">
+        <h2>Trip Mix</h2>
+        <div id="boatTripMix" class="boat-trip-mix">
+          <div class="loading-card">Loading trip mix...</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="boat-detail-grid">
+      <article class="boat-detail-card">
+        <h2>Recent Trend</h2>
+        <div id="boatTrend" class="boat-trend-box">
+          <div class="loading-card">Loading trend...</div>
+        </div>
+      </article>
+
+      <article class="boat-detail-card">
+        <h2>Pricing & Booking</h2>
+        <div id="boatPrices" class="boat-price-list">
+          <div class="loading-card">Loading prices...</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="boat-detail-section">
+      <h2>Top Species</h2>
+      <div id="boatSpecies" class="boat-species-grid">
+        <div class="loading-card">Loading species...</div>
+      </div>
+    </section>
+
+    <section class="boat-detail-section">
+      <h2>Most Recent Reported Trips</h2>
+      <div id="boatReports" class="boat-reports-grid">
+        <div class="loading-card">Loading reports...</div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+<script src="/site-config.js"></script>
+  <script src="boat-detail.js?v=boat-detail-v2"></script>
+  <script src="/js/layout.js"></script>
+</body>
+</html>
