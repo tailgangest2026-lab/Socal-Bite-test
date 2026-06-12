@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rankings | The SoCal Bite</title>
+  <meta name="description" content="Southern California sportfishing boat and landing rankings by fish-per-angler, total catch, trips, and anglers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesocalbite.com/rankings/" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/rankings.css" />
+</head>
+
+<body>
+  <div id="site-header"></div>
+<main>
+    <section class="rankings-hero">
+      <span class="page-kicker">Rankings Dashboard</span>
+      <h1>Who’s actually putting fish on the deck.</h1>
+      <p>
+        Sortable boat and landing leaderboards across every SoCal region —
+        ranked by fish-per-angler, total catch and trip volume.
+      </p>
+
+      <div class="ranking-kpis">
+        <article>
+          <span>Trips</span>
+          <strong id="rankTrips">--</strong>
+        </article>
+        <article>
+          <span>Anglers</span>
+          <strong id="rankAnglers">--</strong>
+        </article>
+        <article>
+          <span>Fish Landed</span>
+          <strong id="rankFish">--</strong>
+        </article>
+        <article>
+          <span>Avg FPA</span>
+          <strong id="rankFpa">--</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="rankings-panel">
+      <div class="rankings-toolbar">
+        <div class="rank-toggle">
+          <button class="active" type="button" data-view="boats">⚓ Boats</button>
+          <button type="button" data-view="landings">▦ Landings</button>
+        </div>
+<div class="rank-controls">
+
+  <select id="rankRegion">
+    <option value="all">All regions</option>
+  </select>
+
+  <select id="rankDateRange">
+    <option value="today">Today</option>
+    <option value="yesterday">Previous Day</option>
+    <option value="week">Current Week</option>
+    <option value="month" selected>Current Month</option>
+    <option value="prevMonth">Previous Month</option>
+    <option value="custom">Custom Range</option>
+  </select>
+
+  <div id="customDateRange" class="custom-date-range hidden">
+    <input type="date" id="rankStartDate">
+    <span>to</span>
+    <input type="date" id="rankEndDate">
+  </div>
+
+  <input id="rankSearch" type="search" placeholder="Search boats..." />
+
+</div>
+
+      <div class="ranking-table-wrap">
+        <table class="ranking-table">
+          <thead id="rankingHead"></thead>
+          <tbody id="rankingBody">
+            <tr>
+              <td colspan="7">Loading rankings...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+<script src="/site-config.js"></script>
+  <script src="rankings.js?v=loveable-rankings-1"></script>
+  <script src="/js/layout.js"></script>
+</body>
+</html>
