@@ -5,9 +5,27 @@ let dailyRows = [];
 let selectedRegion = "";
 let speciesFpaChartInstance = null;
 
+function getBasePath() {
+  if (window.SOCAL_BITE_BASE_PATH !== undefined) {
+    return window.SOCAL_BITE_BASE_PATH;
+  }
+
+  if (window.location.hostname.includes("github.io")) {
+    const firstPath = window.location.pathname.split("/").filter(Boolean)[0];
+    return firstPath ? "/" + firstPath : "";
+  }
+
+  return "";
+}
+
+function getAppUrl(path) {
+  const cleanPath = String(path || "").replace(/^\/+/, "");
+  return `${getBasePath()}/${cleanPath}`;
+}
+
 async function initForecast() {
   try {
-    forecastRows = await fetchJson("../home.json");
+    forecastRows = await fetchJson("home.json");
     dailyRows = await loadRecentDailyRows();
 
     if (!Array.isArray(forecastRows) || !forecastRows.length) {
@@ -24,14 +42,18 @@ async function initForecast() {
 }
 
 async function fetchJson(path) {
-  const url = window.socalBiteDataUrl
-    ? window.socalBiteDataUrl(path)
-    : "../" + path;
+  const cleanPath = String(path || "").replace(/^(\.\.\/)+/, "").replace(/^\/+/, "");
+
+  const url = typeof window.socalBiteDataUrl === "function"
+    ? window.socalBiteDataUrl(cleanPath)
+    : `${getAppUrl(cleanPath)}?v=${Date.now()}`;
+
+  console.log("Loading:", url);
 
   const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error("Could not load " + path);
+    throw new Error("Could not load " + cleanPath);
   }
 
   return response.json();
@@ -41,7 +63,7 @@ function normalizeReportFile(report) {
   if (report.file) {
     const match = String(report.file).match(/daily-report-(\d{4}-\d{2}-\d{2})/);
     if (match) return `reports/daily-report-${match[1]}.json`;
-    return report.file;
+    return String(report.file).replace(/^\/+/, "");
   }
 
   const date = String(report.date || "").split("T")[0];
@@ -65,19 +87,19 @@ async function loadRecentDailyRows() {
       try {
         const reportRows = await fetchJson(filePath);
 
-if (Array.isArray(reportRows)) {
-  const reportDate =
-    String(report.date || "").split("T")[0] ||
-    String(filePath).match(/\d{4}-\d{2}-\d{2}/)?.[0] ||
-    "";
+        if (Array.isArray(reportRows)) {
+          const reportDate =
+            String(report.date || "").split("T")[0] ||
+            String(filePath).match(/\d{4}-\d{2}-\d{2}/)?.[0] ||
+            "";
 
-  reportRows.forEach(row => {
-    rows.push({
-      ...row,
-      __reportDate: reportDate
-    });
-  });
-}
+          reportRows.forEach(row => {
+            rows.push({
+              ...row,
+              __reportDate: reportDate
+            });
+          });
+        }
       } catch (error) {
         console.warn("Skipped report:", filePath, error);
       }
@@ -149,19 +171,19 @@ function updateBiteScoreGauge(score, label) {
 
   const scoreValue = document.getElementById("biteScoreValue");
   const scoreLabel = document.getElementById("biteScoreLabel");
-  const scoreRing =
-    document.getElementById("biteScoreRing") ||
-    document.querySelector(".score-ring");
 
   if (scoreValue) scoreValue.textContent = Math.round(cleanScore);
   if (scoreLabel) scoreLabel.textContent = label || getScoreLabel(cleanScore);
 
-  if (!scoreRing) return;
+  const scoreRing =
+    document.getElementById("biteScoreRing") ||
+    document.querySelector(".score-ring");
 
-  scoreRing.style.setProperty("--score", cleanScore);
-
-  scoreRing.classList.remove("score-poor", "score-ok", "score-fair", "score-good");
-  scoreRing.classList.add(getScoreClass(cleanScore));
+  if (scoreRing) {
+    scoreRing.style.setProperty("--score", cleanScore);
+    scoreRing.classList.remove("score-poor", "score-ok", "score-fair", "score-good");
+    scoreRing.classList.add(getScoreClass(cleanScore));
+  }
 }
 
 function getScoreClass(score) {
@@ -187,7 +209,15 @@ function buildSpeciesFpaChart(region) {
   const trend = buildSpeciesWeeklyTrend(region);
 
   if (!trend.weeks.length || !trend.datasets.length) {
-    canvas.parentElement.innerHTML = `<div class="empty-card">No 12-week trend data found for ${safe(region)}.</div>`;
+    const parent = canvas.parentElement;
+    if (parent) {
+      parent.innerHTML = `<div class="empty-card">No 12-week trend data found for ${safe(region)}.</div>`;
+    }
+    return;
+  }
+
+  if (typeof Chart === "undefined") {
+    console.warn("Chart.js is not loaded.");
     return;
   }
 
@@ -239,6 +269,7 @@ function buildSpeciesFpaChart(region) {
     }
   });
 }
+
 function buildSpeciesRankings(region) {
   const container = document.getElementById("speciesRankings");
   if (!container) return;
@@ -251,7 +282,7 @@ function buildSpeciesRankings(region) {
   }
 
   container.innerHTML = species.map((item, index) => `
-    <a class="species-rank-card" href="/species-detail/?species=${encodeURIComponent(item.name)}">
+    <a class="species-rank-card" href="${getAppUrl(`species-detail/?species=${encodeURIComponent(item.name)}`)}">
       <div>
         <span>Rank #${index + 1}</span>
         <h3>${safe(item.name)}</h3>
@@ -372,16 +403,12 @@ function getTideMovement(tides) {
   return "Moving Falling";
 }
 
-function clampScore(score) {
-  return Math.max(35, Math.min(96, Math.round(Number(score || 0))));
-}
-
 function buildSpeciesFpaByRegion(region) {
   const targetRegion = String(region || "").toLowerCase();
 
-  const regionRows = dailyRows.filter(row => {
-    return String(row.region || "").toLowerCase() === targetRegion;
-  });
+  const regionRows = dailyRows.filter(row =>
+    String(row.region || "").toLowerCase() === targetRegion
+  );
 
   const speciesTotals = {};
   const speciesAnglers = {};
@@ -414,147 +441,6 @@ function buildSpeciesFpaByRegion(region) {
     .slice(0, 6);
 }
 
-function parseFishCounts(text) {
-  return String(text || "")
-    .split(",")
-    .map(part => {
-      const cleaned = part.trim();
-      const match = cleaned.match(/^([\d,]+)\s+(.+)$/);
-
-      if (!match) return null;
-
-      return {
-        count: Number(match[1].replace(/,/g, "")),
-        species: match[2].trim()
-      };
-    })
-    .filter(Boolean);
-}
-
-function estimateWaterTemp(region) {
-  const temps = {
-    "San Diego": "67°F",
-    "Orange County": "66°F",
-    "Los Angeles": "65°F",
-    "Ventura": "63°F",
-    "Santa Barbara": "62°F",
-    "San Luis Obispo": "60°F"
-  };
-
-  return temps[region] || "65°F";
-}
-
-function estimateWind(region) {
-  const winds = {
-    "San Diego": "5 kt S",
-    "Orange County": "6 kt SW",
-    "Los Angeles": "7 kt W",
-    "Ventura": "9 kt W",
-    "Santa Barbara": "8 kt NW",
-    "San Luis Obispo": "10 kt NW"
-  };
-
-  return winds[region] || "6 kt W";
-}
-
-function estimateSwell(region) {
-  const swells = {
-    "San Diego": "4 ft @ 11s",
-    "Orange County": "3 ft @ 12s",
-    "Los Angeles": "3 ft @ 10s",
-    "Ventura": "4 ft @ 9s",
-    "Santa Barbara": "2 ft @ 11s",
-    "San Luis Obispo": "5 ft @ 10s"
-  };
-
-  return swells[region] || "3 ft @ 10s";
-}
-
-function estimateVisibility(region) {
-  return region === "San Diego" ? "13 mi" : "10 mi";
-}
-
-function estimateTide(score) {
-  if (score >= 75) return "Moving";
-  if (score >= 55) return "Rising";
-  return "Falling";
-}
-
-function setText(id, value) {
-  const el = document.getElementById(id);
-  if (el) el.textContent = value || "--";
-}
-
-function format(value) {
-  return Number(value || 0).toLocaleString("en-US");
-}
-
-function safe(value) {
-  return String(value || "N/A")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function escapeAttr(value) {
-  return String(value || "")
-    .replaceAll("\\", "\\\\")
-    .replaceAll("'", "\\'")
-    .replaceAll('"', "&quot;");
-}
-function buildRegionalFpaTrend(region) {
-  const targetRegion = String(region || "").toLowerCase();
-  const today = new Date();
-
-  const weeks = [];
-
-  for (let i = 11; i >= 0; i--) {
-    const end = new Date(today);
-    end.setDate(today.getDate() - i * 7);
-
-    const start = new Date(end);
-    start.setDate(end.getDate() - 6);
-
-    weeks.push({
-      start,
-      end,
-      fish: 0,
-      anglers: 0,
-      label: `${start.getMonth() + 1}/${start.getDate()}`
-    });
-  }
-
-  dailyRows.forEach(row => {
-    if (String(row.region || "").toLowerCase() !== targetRegion) return;
-
-    const rowDate = new Date(row.__reportDate || row.date || row.report_date || row.reportDate || "");
-    if (isNaN(rowDate)) return;
-
-    const anglers = Number(row.anglers || 0);
-    const fishCounts = String(row.fish_counts || "");
-
-    const totalFish = parseFishCounts(fishCounts)
-      .reduce((sum, item) => sum + Number(item.count || 0), 0);
-
-    weeks.forEach(week => {
-      if (rowDate >= week.start && rowDate <= week.end) {
-        week.fish += totalFish;
-        week.anglers += anglers;
-      }
-    });
-  });
-
-  return weeks
-    .map(week => ({
-      label: week.label,
-      fish: week.fish,
-      anglers: week.anglers,
-      fpa: week.anglers > 0 ? week.fish / week.anglers : 0
-    }))
-    .filter(week => week.fish > 0 || week.anglers > 0);
-}
 function buildSpeciesWeeklyTrend(region) {
   const targetRegion = String(region || "").toLowerCase();
 
@@ -568,9 +454,11 @@ function buildSpeciesWeeklyTrend(region) {
   for (let i = 11; i >= 0; i--) {
     const start = new Date(today);
     start.setDate(today.getDate() - i * 7 - 6);
+    start.setHours(0, 0, 0, 0);
 
     const end = new Date(today);
     end.setDate(today.getDate() - i * 7);
+    end.setHours(23, 59, 59, 999);
 
     weeks.push({
       key: `${start.getFullYear()}-W${String(getWeekNumber(start)).padStart(2, "0")}`,
@@ -649,6 +537,31 @@ function buildSpeciesWeeklyTrend(region) {
     datasets
   };
 }
+
+function parseFishCounts(text) {
+  return String(text || "")
+    .split(",")
+    .map(part => {
+      const cleaned = part.trim();
+      const match = cleaned.match(/^([\d,]+)\s+(.+)$/);
+
+      if (!match) return null;
+
+      let species = match[2].trim();
+
+      species = species
+        .replace(/\s+Released$/i, "")
+        .replace(/\s+\(Released\)$/i, "")
+        .trim();
+
+      return {
+        count: Number(match[1].replace(/,/g, "")),
+        species
+      };
+    })
+    .filter(Boolean);
+}
+
 function getWeekNumber(date) {
   const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
   const dayNum = d.getUTCDay() || 7;
@@ -658,4 +571,82 @@ function getWeekNumber(date) {
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
 
   return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+}
+
+function clampScore(score) {
+  return Math.max(35, Math.min(96, Math.round(Number(score || 0))));
+}
+
+function estimateWaterTemp(region) {
+  const temps = {
+    "San Diego": "67°F",
+    "Orange County": "66°F",
+    "Los Angeles": "65°F",
+    "Ventura": "63°F",
+    "Santa Barbara": "62°F",
+    "San Luis Obispo": "60°F"
+  };
+
+  return temps[region] || "65°F";
+}
+
+function estimateWind(region) {
+  const winds = {
+    "San Diego": "5 kt S",
+    "Orange County": "6 kt SW",
+    "Los Angeles": "7 kt W",
+    "Ventura": "9 kt W",
+    "Santa Barbara": "8 kt NW",
+    "San Luis Obispo": "10 kt NW"
+  };
+
+  return winds[region] || "6 kt W";
+}
+
+function estimateSwell(region) {
+  const swells = {
+    "San Diego": "4 ft @ 11s",
+    "Orange County": "3 ft @ 12s",
+    "Los Angeles": "3 ft @ 10s",
+    "Ventura": "4 ft @ 9s",
+    "Santa Barbara": "2 ft @ 11s",
+    "San Luis Obispo": "5 ft @ 10s"
+  };
+
+  return swells[region] || "3 ft @ 10s";
+}
+
+function estimateVisibility(region) {
+  return region === "San Diego" ? "13 mi" : "10 mi";
+}
+
+function estimateTide(score) {
+  if (score >= 75) return "Moving";
+  if (score >= 55) return "Rising";
+  return "Falling";
+}
+
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value || "--";
+}
+
+function format(value) {
+  return Number(value || 0).toLocaleString("en-US");
+}
+
+function safe(value) {
+  return String(value || "N/A")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function escapeAttr(value) {
+  return String(value || "")
+    .replaceAll("\\", "\\\\")
+    .replaceAll("'", "\\'")
+    .replaceAll('"', "&quot;");
 }
