@@ -1,0 +1,32 @@
+[
+  {
+    "trip_date": "2025-02-07",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Malihini",
+    "trip_type": "1/2 Day AM",
+    "anglers": 18,
+    "fish_counts": "10 Calico Bass Released, 2 Sculpin, 71 Whitefish",
+    "total_fish": 83
+  },
+  {
+    "trip_date": "2025-02-07",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Chubasco II",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 8,
+    "fish_counts": "25 Sand Bass, 35 Sculpin",
+    "total_fish": 60
+  },
+  {
+    "trip_date": "2025-02-07",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "1/2 Day AM",
+    "anglers": 10,
+    "fish_counts": "24 Whitefish",
+    "total_fish": 24
+  }
+]

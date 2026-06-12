@@ -1,0 +1,22 @@
+[
+  {
+    "trip_date": "2025-02-12",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Alicia",
+    "trip_type": "1/2 Day AM",
+    "anglers": 6,
+    "fish_counts": "2 Halibut, 2 Sand Bass",
+    "total_fish": 4
+  },
+  {
+    "trip_date": "2025-02-12",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 17,
+    "fish_counts": "4 Sculpin, 28 Whitefish",
+    "total_fish": 32
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "trip_date": "2025-01-01",
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day AM",
+    "anglers": 26,
+    "fish_counts": "10 Calico Bass Released, 4 Sand Bass, 2 Sculpin, 186 Whitefish",
+    "total_fish": 202
+  },
+  {
+    "trip_date": "2025-01-01",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day AM",
+    "anglers": 23,
+    "fish_counts": "2 Sculpin, 8 Whitefish",
+    "total_fish": 10
+  },
+  {
+    "trip_date": "2025-01-01",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 21,
+    "fish_counts": "105 Sculpin, 16 Whitefish",
+    "total_fish": 121
+  },
+  {
+    "trip_date": "2025-01-01",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 46,
+    "fish_counts": "2 Halibut",
+    "total_fish": 2
+  },
+  {
+    "trip_date": "2025-01-01",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 21,
+    "fish_counts": "7 Sand Bass, 2 Sculpin",
+    "total_fish": 9
+  }
+]

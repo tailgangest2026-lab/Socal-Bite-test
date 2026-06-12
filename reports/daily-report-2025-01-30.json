@@ -1,0 +1,42 @@
+[
+  {
+    "trip_date": "2025-01-30",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 27,
+    "fish_counts": "12 Halibut, 28 Sculpin",
+    "total_fish": 40
+  },
+  {
+    "trip_date": "2025-01-30",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "3/4 Day",
+    "anglers": 23,
+    "fish_counts": "2 Sand Bass, 115 Sculpin",
+    "total_fish": 117
+  },
+  {
+    "trip_date": "2025-01-30",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 11,
+    "fish_counts": "1 Halibut, 1 Sculpin, 65 Whitefish",
+    "total_fish": 67
+  },
+  {
+    "trip_date": "2025-01-30",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 8,
+    "fish_counts": "9 Sand Bass, 17 Sculpin, 12 Whitefish",
+    "total_fish": 38
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "trip_date": "2025-01-02",
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day AM",
+    "anglers": 26,
+    "fish_counts": "10 Calico Bass Released, 4 Sand Bass, 2 Sculpin, 186 Whitefish",
+    "total_fish": 202
+  },
+  {
+    "trip_date": "2025-01-02",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day AM",
+    "anglers": 23,
+    "fish_counts": "2 Sculpin, 8 Whitefish",
+    "total_fish": 10
+  },
+  {
+    "trip_date": "2025-01-02",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 21,
+    "fish_counts": "105 Sculpin, 16 Whitefish",
+    "total_fish": 121
+  },
+  {
+    "trip_date": "2025-01-02",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 36,
+    "fish_counts": "26 Sand Bass, 39 Sculpin",
+    "total_fish": 65
+  },
+  {
+    "trip_date": "2025-01-02",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Alicia",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-01-02",
+    "region": "San Diego",
+    "landing": "Helgrens Sportfishing",
+    "boat": "Fisherman III",
+    "trip_type": "1/2 Day AM",
+    "anglers": 15,
+    "fish_counts": "1 Sculpin, 18 Whitefish",
+    "total_fish": 19
+  },
+  {
+    "trip_date": "2025-01-02",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 15,
+    "fish_counts": "75 Sculpin",
+    "total_fish": 75
+  },
+  {
+    "trip_date": "2025-01-02",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 42,
+    "fish_counts": "2 Sculpin, 22 Whitefish",
+    "total_fish": 24
+  }
+]

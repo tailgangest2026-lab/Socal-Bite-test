@@ -1,0 +1,32 @@
+[
+  {
+    "trip_date": "2025-02-18",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 33,
+    "fish_counts": "130 Sculpin",
+    "total_fish": 130
+  },
+  {
+    "trip_date": "2025-02-18",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 15,
+    "fish_counts": "18 Sand Bass, 13 Sculpin",
+    "total_fish": 31
+  },
+  {
+    "trip_date": "2025-02-18",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 10,
+    "fish_counts": "74 Whitefish",
+    "total_fish": 74
+  }
+]
