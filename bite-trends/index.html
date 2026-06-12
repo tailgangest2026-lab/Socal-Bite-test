@@ -1,0 +1,140 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bite Trends | SoCal Bite</title>
+
+  <meta
+    name="description"
+    content="Southern California fishing bite trends by region, species, trips, anglers, fish totals, and fish per angler."
+  />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/rankings.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+  <link rel="manifest" href="/manifest.json">
+
+<meta name="theme-color" content="#031828">
+
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/apple-touch-icon.png"
+/>
+  <link rel="canonical" href="https://thesocalbite.com/bite-trends/" />
+  <meta property="og:title" content="Bite Trends | SoCal Bite" />
+  <meta property="og:description" content="Track Southern California fishing bite trends by region, species, trips, anglers, total fish, and fish per angler." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesocalbite.com/bite-trends/" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+</head>
+
+<body class="inner-page">
+    
+  <section class="page-top">
+    <h1>Bite Trends</h1>
+
+      <nav class="page-nav">
+      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Boat Reports</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/reports/">Daily Report</a>
+          <a href="/boat-ratings/">Boat Ratings</a>
+          <a href="/top-boats/">Top Boats</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-fish"></i>
+          <span>Species Reports</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/bite-trends/">Bite Trends</a>
+          <a href="/forecast/">Bite Forecast</a>
+          <a href="/species/">Species</a>
+          <a href="/top-species/">Top Species</a>
+        </div>
+      </div>
+
+        <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-water"></i>
+          <span>Conditions</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="boat-conditions.html">Boat Conditions</a>
+          <a href="/beach-conditions/">Surf Conditions</a>
+          <a href="/pier-conditions/">Pier Conditions</a>
+        </div>
+      </div>
+
+      <a href="/news/"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
+      <a href="/landings/"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
+      <a href="/about/"><i class="fa-solid fa-user"></i><span>About</span></a>
+    </nav>
+  </section>
+
+  <main class="report-page">
+
+    <div class="date-controls">
+      <select id="trendWindow">
+        <option value="7">Last 7 Days</option>
+        <option value="14">Last 14 Days</option>
+        <option value="30" selected>Last 30 Days</option>
+      </select>
+
+      <select id="regionFilter">
+        <option value="all">All Regions</option>
+      </select>
+    </div>
+<section class="chart-card">
+  <div class="chart-card-header">
+    <div>
+      <h2>Species Trend Year Over Year</h2>
+      <p>Weekly fish count comparison by species.</p>
+    </div>
+  </div>
+ <select id="speciesTrendSelect"></select>
+  <canvas id="speciesYoYChart"></canvas>
+</section>
+    <div id="biteTrendsPage">
+      <h2>Loading bite trends...</h2>
+    </div>
+
+  </main>
+<footer class="site-footer">
+  <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+
+<div class="social-links">
+  <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
+    <img src="/assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
+    <img src="/assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
+  </a>
+</div>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/site-config.js" defer></script>
+  <script src="bite-trends.js?v=1" defer></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js");
+  });
+}
+</script>
+</body>
+</html>
