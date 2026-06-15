@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", initReports);
 let reportIndex = [];
 let currentRegion = "All";
 let currentRows = [];
+let reportYearCache = {};
 
 async function initReports() {
   try {
@@ -38,18 +39,38 @@ async function fetchJson(path) {
   return response.json();
 }
 
+async function getYearRowsForDate(date) {
+  const year = String(date).substring(0, 4);
+  const filePath = `reports/reports-${year}.json`;
+
+  if (!reportYearCache[year]) {
+    const rows = await fetchJson(filePath);
+    reportYearCache[year] = Array.isArray(rows) ? rows : [];
+  }
+
+  return reportYearCache[year].filter(row => {
+    return String(row.trip_date || "") === String(date);
+  });
+}
+
 function buildRegionTabs() {
   const tabs = document.getElementById("reportRegionTabs");
   if (!tabs) return;
 
   const regions = [
     "All",
+    "Alameda County",
+    "Central California",
     "Los Angeles",
+    "Marin County",
+    "Monterey County",
     "Orange County",
     "San Diego",
-    "Ventura",
+    "San Francisco Bay",
+    "San Mateo",
     "Santa Barbara",
-    "San Luis Obispo"
+    "Santa Cruz",
+    "Ventura County"
   ];
 
   tabs.innerHTML = regions.map(region => `
@@ -114,12 +135,7 @@ function buildDateList() {
 
 async function loadReport(report) {
   try {
-    const filePath = report.file || `reports/daily-report-${report.date}.json`;
-    currentRows = await fetchJson(filePath);
-
-    if (!Array.isArray(currentRows)) {
-      currentRows = [];
-    }
+    currentRows = await getYearRowsForDate(report.date);
 
     setText("selectedReportTitle", formatDisplayDate(report.date));
     setText("selectedReportMeta", report.date);
@@ -128,6 +144,10 @@ async function loadReport(report) {
   } catch (error) {
     console.error("Report file load error:", error);
     currentRows = [];
+
+    setText("selectedReportTitle", formatDisplayDate(report.date || ""));
+    setText("selectedReportMeta", report.date || "");
+
     renderReportRows([]);
   }
 }
@@ -162,13 +182,13 @@ function renderReportRows(rows) {
   tbody.innerHTML = filtered.map(row => `
     <tr>
       <td>
-        <a class="data-link" href="/boat-detail/?boat=${encodeURIComponent(row.boat || "")}">
+        <a class="data-link" href="/boat-detail.html?boat=${encodeURIComponent(row.boat || "")}">
           ${safe(row.boat || "Unknown Boat")}
         </a>
       </td>
 
       <td>
-        <a class="data-link" href="/landing-detail/?landing=${encodeURIComponent(row.landing || "")}">
+        <a class="data-link" href="/landing-detail.html?landing=${encodeURIComponent(row.landing || "")}">
           ${safe(row.landing || "Unknown Landing")}
         </a>
       </td>
@@ -200,7 +220,7 @@ function renderFishCounts(fishCounts) {
       const species = text.replace(/^[\d,]+\s+/, "");
 
       return `
-        <a class="fish-count-pill" href="/species-detail/?species=${encodeURIComponent(species)}">
+        <a class="fish-count-pill" href="/species-detail.html?species=${encodeURIComponent(species)}">
           ${safe(text)}
         </a>
       `;
