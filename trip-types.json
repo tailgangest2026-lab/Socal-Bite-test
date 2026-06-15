@@ -1,0 +1,434 @@
+[
+  {
+    "rank": 1,
+    "region": "Los Angeles",
+    "trip_type": "1.5 Day",
+    "trips": 3,
+    "anglers": 41,
+    "fish": 716,
+    "fpa": 17.46
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles",
+    "trip_type": "2 Day",
+    "trips": 7,
+    "anglers": 122,
+    "fish": 2080,
+    "fpa": 17.05
+  },
+  {
+    "rank": 3,
+    "region": "Los Angeles",
+    "trip_type": "Overnight",
+    "trips": 73,
+    "anglers": 1954,
+    "fish": 23366,
+    "fpa": 11.96
+  },
+  {
+    "rank": 4,
+    "region": "Los Angeles",
+    "trip_type": "3/4 Day",
+    "trips": 239,
+    "anglers": 6150,
+    "fish": 47574,
+    "fpa": 7.74
+  },
+  {
+    "rank": 5,
+    "region": "Los Angeles",
+    "trip_type": "1/2 Day PM",
+    "trips": 15,
+    "anglers": 455,
+    "fish": 3049,
+    "fpa": 6.7
+  },
+  {
+    "rank": 6,
+    "region": "Los Angeles",
+    "trip_type": "1/2 Day AM",
+    "trips": 123,
+    "anglers": 5404,
+    "fish": 33320,
+    "fpa": 6.17
+  },
+  {
+    "rank": 7,
+    "region": "Los Angeles",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 59,
+    "anglers": 3324,
+    "fish": 18821,
+    "fpa": 5.66
+  },
+  {
+    "rank": 8,
+    "region": "Los Angeles",
+    "trip_type": "Full Day",
+    "trips": 117,
+    "anglers": 3210,
+    "fish": 16577,
+    "fpa": 5.16
+  },
+  {
+    "rank": 1,
+    "region": "NorCal",
+    "trip_type": "1/2 Day PM",
+    "trips": 4,
+    "anglers": 57,
+    "fish": 440,
+    "fpa": 7.72
+  },
+  {
+    "rank": 2,
+    "region": "NorCal",
+    "trip_type": "1/2 Day AM",
+    "trips": 31,
+    "anglers": 441,
+    "fish": 1310,
+    "fpa": 2.97
+  },
+  {
+    "rank": 3,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "trips": 58,
+    "anglers": 893,
+    "fish": 2171,
+    "fpa": 2.43
+  },
+  {
+    "rank": 4,
+    "region": "NorCal",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 1,
+    "anglers": 6,
+    "fish": 5,
+    "fpa": 0.83
+  },
+  {
+    "rank": 5,
+    "region": "NorCal",
+    "trip_type": "3/4 Day",
+    "trips": 2,
+    "anglers": 12,
+    "fish": 2,
+    "fpa": 0.17
+  },
+  {
+    "rank": 1,
+    "region": "Orange County",
+    "trip_type": "Overnight",
+    "trips": 71,
+    "anglers": 1914,
+    "fish": 19100,
+    "fpa": 9.98
+  },
+  {
+    "rank": 2,
+    "region": "Orange County",
+    "trip_type": "Full Day",
+    "trips": 24,
+    "anglers": 324,
+    "fish": 2184,
+    "fpa": 6.74
+  },
+  {
+    "rank": 3,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
+    "trips": 205,
+    "anglers": 6718,
+    "fish": 43140,
+    "fpa": 6.42
+  },
+  {
+    "rank": 4,
+    "region": "Orange County",
+    "trip_type": "1/2 Day AM",
+    "trips": 184,
+    "anglers": 4966,
+    "fish": 20107,
+    "fpa": 4.05
+  },
+  {
+    "rank": 5,
+    "region": "Orange County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 50,
+    "anglers": 2011,
+    "fish": 7018,
+    "fpa": 3.49
+  },
+  {
+    "rank": 6,
+    "region": "Orange County",
+    "trip_type": "1/2 Day PM",
+    "trips": 151,
+    "anglers": 4675,
+    "fish": 13673,
+    "fpa": 2.92
+  },
+  {
+    "rank": 1,
+    "region": "San Diego",
+    "trip_type": "Full Day Local",
+    "trips": 1,
+    "anglers": 3,
+    "fish": 24,
+    "fpa": 8
+  },
+  {
+    "rank": 2,
+    "region": "San Diego",
+    "trip_type": "3 Day",
+    "trips": 52,
+    "anglers": 1156,
+    "fish": 8833,
+    "fpa": 7.64
+  },
+  {
+    "rank": 3,
+    "region": "San Diego",
+    "trip_type": "3/4 Day",
+    "trips": 115,
+    "anglers": 1846,
+    "fish": 11844,
+    "fpa": 6.42
+  },
+  {
+    "rank": 4,
+    "region": "San Diego",
+    "trip_type": "2.5 Day",
+    "trips": 17,
+    "anglers": 296,
+    "fish": 1713,
+    "fpa": 5.79
+  },
+  {
+    "rank": 5,
+    "region": "San Diego",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 71,
+    "anglers": 1647,
+    "fish": 7935,
+    "fpa": 4.82
+  },
+  {
+    "rank": 6,
+    "region": "San Diego",
+    "trip_type": "2 Day",
+    "trips": 83,
+    "anglers": 1701,
+    "fish": 7189,
+    "fpa": 4.23
+  },
+  {
+    "rank": 7,
+    "region": "San Diego",
+    "trip_type": "1/2 Day AM",
+    "trips": 449,
+    "anglers": 10990,
+    "fish": 38049,
+    "fpa": 3.46
+  },
+  {
+    "rank": 8,
+    "region": "San Diego",
+    "trip_type": "1/2 Day PM",
+    "trips": 220,
+    "anglers": 7081,
+    "fish": 23200,
+    "fpa": 3.28
+  },
+  {
+    "rank": 9,
+    "region": "San Diego",
+    "trip_type": "1.5 Day",
+    "trips": 66,
+    "anglers": 1381,
+    "fish": 3579,
+    "fpa": 2.59
+  },
+  {
+    "rank": 10,
+    "region": "San Diego",
+    "trip_type": "Full Day Coronado Islands",
+    "trips": 205,
+    "anglers": 5714,
+    "fish": 14503,
+    "fpa": 2.54
+  },
+  {
+    "rank": 11,
+    "region": "San Diego",
+    "trip_type": "3/4 Day Local",
+    "trips": 2,
+    "anglers": 51,
+    "fish": 108,
+    "fpa": 2.12
+  },
+  {
+    "rank": 12,
+    "region": "San Diego",
+    "trip_type": "Overnight",
+    "trips": 48,
+    "anglers": 910,
+    "fish": 1708,
+    "fpa": 1.88
+  },
+  {
+    "rank": 13,
+    "region": "San Diego",
+    "trip_type": "Full Day Offshore",
+    "trips": 13,
+    "anglers": 227,
+    "fish": 420,
+    "fpa": 1.85
+  },
+  {
+    "rank": 14,
+    "region": "San Diego",
+    "trip_type": "Full Day",
+    "trips": 72,
+    "anglers": 1436,
+    "fish": 2429,
+    "fpa": 1.69
+  },
+  {
+    "rank": 1,
+    "region": "San Luis Obispo",
+    "trip_type": "Full Day",
+    "trips": 22,
+    "anglers": 489,
+    "fish": 3901,
+    "fpa": 7.98
+  },
+  {
+    "rank": 2,
+    "region": "San Luis Obispo",
+    "trip_type": "1/2 Day PM",
+    "trips": 7,
+    "anglers": 123,
+    "fish": 934,
+    "fpa": 7.59
+  },
+  {
+    "rank": 3,
+    "region": "San Luis Obispo",
+    "trip_type": "1/2 Day AM",
+    "trips": 47,
+    "anglers": 977,
+    "fish": 6868,
+    "fpa": 7.03
+  },
+  {
+    "rank": 4,
+    "region": "San Luis Obispo",
+    "trip_type": "3/4 Day",
+    "trips": 49,
+    "anglers": 903,
+    "fish": 6013,
+    "fpa": 6.66
+  },
+  {
+    "rank": 1,
+    "region": "Santa Barbara",
+    "trip_type": "Overnight",
+    "trips": 3,
+    "anglers": 66,
+    "fish": 1075,
+    "fpa": 16.29
+  },
+  {
+    "rank": 2,
+    "region": "Santa Barbara",
+    "trip_type": "3/4 Day",
+    "trips": 114,
+    "anglers": 2717,
+    "fish": 37576,
+    "fpa": 13.83
+  },
+  {
+    "rank": 3,
+    "region": "Santa Barbara",
+    "trip_type": "1/2 Day AM",
+    "trips": 6,
+    "anglers": 110,
+    "fish": 1040,
+    "fpa": 9.45
+  },
+  {
+    "rank": 1,
+    "region": "Ventura",
+    "trip_type": "2 Day",
+    "trips": 15,
+    "anglers": 283,
+    "fish": 7216,
+    "fpa": 25.5
+  },
+  {
+    "rank": 2,
+    "region": "Ventura",
+    "trip_type": "3 Day",
+    "trips": 3,
+    "anglers": 78,
+    "fish": 1908,
+    "fpa": 24.46
+  },
+  {
+    "rank": 3,
+    "region": "Ventura",
+    "trip_type": "Overnight",
+    "trips": 110,
+    "anglers": 2109,
+    "fish": 33030,
+    "fpa": 15.66
+  },
+  {
+    "rank": 4,
+    "region": "Ventura",
+    "trip_type": "1/2 Day AM",
+    "trips": 101,
+    "anglers": 3012,
+    "fish": 32703,
+    "fpa": 10.86
+  },
+  {
+    "rank": 5,
+    "region": "Ventura",
+    "trip_type": "3/4 Day",
+    "trips": 128,
+    "anglers": 3084,
+    "fish": 30527,
+    "fpa": 9.9
+  },
+  {
+    "rank": 6,
+    "region": "Ventura",
+    "trip_type": "Full Day",
+    "trips": 208,
+    "anglers": 3148,
+    "fish": 30481,
+    "fpa": 9.68
+  },
+  {
+    "rank": 7,
+    "region": "Ventura",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 10,
+    "anglers": 316,
+    "fish": 3023,
+    "fpa": 9.57
+  },
+  {
+    "rank": 8,
+    "region": "Ventura",
+    "trip_type": "1.5 Day",
+    "trips": 1,
+    "anglers": 10,
+    "fish": 3,
+    "fpa": 0.3
+  }
+]
