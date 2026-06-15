@@ -46,3 +46,7 @@ async function loadComponent(id, path) {
     console.error("Component load error:", error);
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  loadComponent("site-header", "../components/header.html");
+  loadComponent("site-footer", "../components/footer.html");
+});
