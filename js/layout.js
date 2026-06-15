@@ -37,3 +37,12 @@ async function loadComponent(id, path) {
     if (!response.ok) {
       throw new Error(`Failed to load ${url}`);
     }
+
+    el.innerHTML = await response.text();
+
+    normalizeHeaderLogo(el);
+    normalizeHeaderLinks(el);
+  } catch (error) {
+    console.error("Component load error:", error);
+  }
+}
