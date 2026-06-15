@@ -11,7 +11,6 @@ permissions:
 jobs:
   update-json:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -26,11 +25,10 @@ jobs:
           mkdir -p reports
           mkdir -p tmp-json
 
-          download_json () {
+          download_json() {
             PAGE="$1"
             OUT="$2"
             TEMP="tmp-json/$(basename "$OUT")"
-
             URL="${BASE_URL}?page=${PAGE}"
 
             echo "Downloading $OUT"
@@ -57,37 +55,32 @@ jobs:
           download_json "bite-trends" "bite-trends.json"
           download_json "home" "home.json"
           download_json "boat-ratings" "boat-ratings.json"
+          download_json "regions" "regions.json"
+          download_json "species" "species.json"
+          download_json "trip-types" "trip-types.json"
+          download_json "boat-detail" "boat-detail.json"
+          download_json "conditions" "conditions.json"
+          download_json "daily-report" "daily-report.json"
           download_json "daily-report-index" "daily-report-index.json"
 
-          TODAY=$(TZ="America/Los_Angeles" date +"%Y-%m-%d")
-          YESTERDAY=$(TZ="America/Los_Angeles" date -d "1 day ago" +"%Y-%m-%d")
-          TWO_DAYS=$(TZ="America/Los_Angeles" date -d "2 days ago" +"%Y-%m-%d")
-          THREE_DAYS=$(TZ="America/Los_Angeles" date -d "3 days ago" +"%Y-%m-%d")
+          CURRENT_YEAR=$(TZ="America/Los_Angeles" date +"%Y")
+          PREVIOUS_YEAR=$((CURRENT_YEAR - 1))
 
-          for DATE in $TODAY $YESTERDAY $TWO_DAYS $THREE_DAYS
-          do
-            URL_PAGE="daily-report-date&date=$DATE"
-            download_json "$URL_PAGE" "reports/daily-report-$DATE.json"
-          done
+          echo "Current Year: $CURRENT_YEAR"
+          echo "Previous Year: $PREVIOUS_YEAR"
 
-          cp "reports/daily-report-$TODAY.json" "reports/daily-report-latest.json"
+          download_json "file&file=reports-${PREVIOUS_YEAR}.json" "reports/reports-${PREVIOUS_YEAR}.json"
+          download_json "file&file=reports-${CURRENT_YEAR}.json" "reports/reports-${CURRENT_YEAR}.json"
 
           rm -rf tmp-json
 
-      - name: Debug latest daily report
+      - name: Show downloaded files
         run: |
-          echo "Latest report file:"
-          ls -la reports/daily-report-latest.json || true
+          echo "Root JSON files:"
+          ls -la *.json || true
 
-          echo "First 500 characters:"
-          head -c 500 reports/daily-report-latest.json || true
-
-          echo ""
-          echo "JSON type:"
-          jq type reports/daily-report-latest.json || true
-
-          echo "Length:"
-          jq length reports/daily-report-latest.json || true
+          echo "Reports folder:"
+          ls -la reports || true
 
       - name: Install Python packages
         run: pip install pillow
@@ -96,8 +89,6 @@ jobs:
         id: detect
         run: |
           python socials/detect_new_trips.py
-
-          echo "Checking for alert flag..."
 
           if [ -f "socials/new-post-created.flag" ]; then
             echo "created=true" >> $GITHUB_OUTPUT
@@ -134,6 +125,7 @@ jobs:
           from: "SoCal Bite Alerts"
           body: |
             New Fish Counts Added.
+
       - name: Email new social post links
         if: steps.detect.outputs.created == 'true'
         uses: dawidd6/action-send-mail@v3
@@ -158,29 +150,12 @@ jobs:
             https://thesocalbite.com/socials/output/new-fish-counts-orange-county.png
             https://thesocalbite.com/socials/output/new-fish-counts-san-diego.png
 
-      - name: Show downloaded files
-        run: |
-          echo "Root JSON files:"
-          ls -la *.json || true
-
-          echo "Reports folder:"
-          ls -la reports || true
-
-          echo "Socials folder:"
-          ls -la socials || true
-
-          echo "Output folder:"
-          ls -la socials/output || true
-
       - name: Commit updated JSON and trip tracking
         run: |
-          set -x
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add -A
-
           git status
 
           if git diff --cached --quiet; then
