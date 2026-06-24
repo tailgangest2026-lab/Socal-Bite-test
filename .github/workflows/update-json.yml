@@ -1,12 +1,5 @@
 name: Update SoCal Bite JSON
 
-on:
-  schedule:
-    - cron: "*/30 * * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   update-json:
